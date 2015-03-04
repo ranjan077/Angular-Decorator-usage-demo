@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Angular demo</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+
+	<style type="text/css">
+		.main{
+			width:50%;
+			margin:0 auto;
+			border: 1px solid red;
+		}
+		.display{
+			width:100%;
+			border: 1px solid blue;
+			height:30%;
+		}
+		.car{
+			width:10%;
+			height:10%;
+			top:50%;
+			position: relative;
+			background-color: red;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+	<h1> Angular $provide.decorator demo</h1>
+	<div class="main" ng-controller="carController">
+		<div class="speed">
+			<label>Slow</label><input type="radio" value="5000" name="speed" ng-model="speed"/>
+			<label>Medium</label><input type="radio" value="3000" name="speed" ng-model="speed"/>
+			<label>Fast</label><input type="radio" value="500" name="speed" ng-model="speed"/>
+		</div>
+		<div class="display">
+			<div class="car" id="car"/>
+		</div>
+		<input type="button" value="Run" ng-click="run()" ng-disabled="isRunning"/>
+	</div>
+</body>
+</html>
